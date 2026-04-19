@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IPM Academic Hub</title>
+    <link rel="icon" href="data:," />
+    <script type="importmap">
+      {
+        "imports": {
+          "@dimforge/rapier3d-compat": "https://cdn.jsdelivr.net/npm/@dimforge/rapier3d-compat@0.17.3/+esm",
+          "three": "https://cdn.jsdelivr.net/npm/three@0.183.2/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.183.2/examples/jsm/"
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero" id="home" aria-labelledby="hero-title">
+        <div id="hero-scene" class="scene scene--hero" aria-hidden="true"></div>
+        <div class="hero__overlay">
+          <div class="hero__inner">
+            <p class="eyebrow">IPM ACADCOMM</p>
+            <nav class="nav" aria-label="Primary navigation">
+              <a href="#home">Home</a>
+              <span aria-hidden="true">&middot;</span>
+              <a href="#resources">Resources</a>
+              <span aria-hidden="true">&middot;</span>
+              <a href="#feedback">Feedback</a>
+              <span aria-hidden="true">&middot;</span>
+              <a href="#faq">FAQ</a>
+            </nav>
+            <h1 class="headline" id="hero-title">
+              <span>Student</span>
+              <span>Academic Hub</span>
+            </h1>
+            <p class="tagline">IPM ACADEMIC COMMITTEE 2025-26</p>
+            <p class="subtagline">FOR THE STUDENTS, BY THE STUDENTS, OF THE STUDENTS</p>
+            <a class="scroll-link" href="#resources">
+              Explore Common Resources
+              <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="resources" id="resources" aria-labelledby="resources-title">
+        <div class="resources__shell">
+          <div class="resources__copy">
+            <p class="section-kicker">Shared Essentials</p>
+            <h2 class="section-title" id="resources-title">Common Resources</h2>
+            <p class="section-text" id="about">
+              These are resources common to all IPMers. You can find batch-specific information on
+              your batch page.
+            </p>
+          </div>
+
+          <div class="resources__stage">
+            <div id="resources-scene" class="scene scene--resources" aria-hidden="true"></div>
+            <p class="resources__hint">Move your cursor around the cards to nudge them.</p>
+          </div>
+
+          <div class="resources__grid" id="resources-list" aria-label="Common resource cards"></div>
+        </div>
+      </section>
+
+      <section class="feedback" id="feedback" aria-labelledby="feedback-title">
+        <div class="feedback__shell">
+          <div class="feedback__intro">
+            <p class="section-kicker">Help Us Improve</p>
+            <h2 class="section-title" id="feedback-title">Got A Problem?</h2>
+            <p class="section-text">
+              For any problems, feedback or suggestions related to the committee or for or against
+              any member of the Academic Committee, fill out the form below. You may choose to
+              remain anonymous.
+            </p>
+
+            <div class="feedback__scene-wrap">
+              <div id="feedback-scene" class="scene scene--feedback" aria-hidden="true"></div>
+            </div>
+          </div>
+
+          <div class="feedback__panel">
+            <form class="feedback-form" id="feedback-form" novalidate>
+              <div class="feedback-form__grid">
+                <label class="field">
+                  <span class="field__label">Name</span>
+                  <input id="feedback-name" name="name" type="text" placeholder="Your name" />
+                </label>
+
+                <label class="field">
+                  <span class="field__label">Email</span>
+                  <input id="feedback-email" name="email" type="email" placeholder="you@example.com" />
+                </label>
+              </div>
+
+              <div class="feedback-form__grid">
+                <label class="field">
+                  <span class="field__label">Category</span>
+                  <select id="feedback-category" name="category">
+                    <option>General Feedback</option>
+                    <option>Issue Report</option>
+                    <option>Suggestion</option>
+                    <option>Committee Member Feedback</option>
+                  </select>
+                </label>
+
+                <label class="field feedback-form__toggle">
+                  <span class="field__label">Privacy</span>
+                  <span class="toggle">
+                    <input id="feedback-anonymous" name="anonymous" type="checkbox" />
+                    <span class="toggle__track"></span>
+                    <span class="toggle__text">Submit anonymously</span>
+                  </span>
+                </label>
+              </div>
+
+              <label class="field">
+                <span class="field__label">Message</span>
+                <textarea
+                  id="feedback-message"
+                  name="message"
+                  rows="6"
+                  placeholder="Share the issue, suggestion, or feedback you’d like the committee to review."
+                ></textarea>
+              </label>
+
+              <div class="feedback-form__footer">
+                <p class="feedback-form__note">
+                  This prototype keeps submissions in your browser for now.
+                </p>
+                <button class="feedback-form__submit" type="submit">Send Feedback</button>
+              </div>
+
+              <p class="feedback-form__status" id="feedback-status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq" id="faq" aria-labelledby="faq-title">
+        <div class="faq__shell">
+          <div class="faq__intro">
+            <p class="section-kicker">Campus Notes</p>
+            <h2 class="section-title" id="faq-title">Frequently Asked Questions</h2>
+            <p class="section-text">
+              Quick answers to the questions students ask most often about schedules, materials,
+              electives, appeals, and portal support.
+            </p>
+            <div class="faq__badge">
+              <span>Updated guidance for everyday academic issues</span>
+            </div>
+          </div>
+
+          <div class="faq__content">
+            <div class="faq__list" id="faq-list" aria-label="Frequently asked questions"></div>
+
+            <div class="faq__cta">
+              <p class="faq__cta-kicker">Need something more specific?</p>
+              <h3 class="faq__cta-title">Still have questions?</h3>
+              <p class="faq__cta-text">
+                If your issue is more specific than the answers above, use the feedback form and the
+                Academic Committee can review it with the right context.
+              </p>
+              <a class="faq__cta-button" href="#feedback">Open Feedback Form</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
